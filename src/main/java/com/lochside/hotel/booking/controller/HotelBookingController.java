@@ -20,22 +20,23 @@ import com.lochside.hotel.booking.model.Booking;
 import com.lochside.hotel.booking.service.HotelBookingService;
 
 @RestController
+@RequestMapping("/bookingDetails")
 public class HotelBookingController {
 
 	@Autowired
 	private HotelBookingService bookingService;
 
-	@RequestMapping( value = "/bookingDetails/customer/{customerId}")
+	@RequestMapping( value = "/customer/{customerId}")
 	public Collection<Booking> getBookingsByCustomer(@PathVariable Long customerId) {
 		return bookingService.findBookingByCustomerId(customerId);
 	}
 
-	@RequestMapping(value = "/bookingDetails/room/{roomId}")
+	@RequestMapping(value = "/room/{roomId}")
 	public Collection<Booking> getBookingsByRoom(@PathVariable Long roomId) {
 		return bookingService.findBookingByRoomId(roomId);
 	}
 
-	@RequestMapping(value = "/bookingDetails/availableRooms/{from_date}/{to_date}")
+	@RequestMapping(value = "/availableRooms/{from_date}/{to_date}")
 	public List<RoomDetails> getAvailableRooms(@PathVariable String from_date, @PathVariable String to_date) {
 		DateFormat formatter = new SimpleDateFormat("yyyy-mm-dd");
 		try {
@@ -46,7 +47,7 @@ public class HotelBookingController {
 		return null;
 	}
 
-	@RequestMapping(value = "/bookingDetails/createBooking", method = RequestMethod.POST)
+	@RequestMapping(value = "/createBooking", method = RequestMethod.POST)
 	public Booking createBooking(@RequestBody @Valid final Booking booking) {
 		return bookingService.save(booking);
 	}
