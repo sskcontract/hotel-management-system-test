@@ -1,0 +1,19 @@
+
+    {
+        "bookingId": 758,
+        "roomId": 333,
+        "customerId": 515,
+        "fromDate": "21-11-2016",
+        "toDate": "24-11-2016",
+        "customer":
+        {
+            "customerId": 515,
+            "firstName": "sampleFirst",
+            "lastName": "verylast",
+            "emailId": "sample.request@gmail.com"
+        },
+        "room":
+        {
+            "roomId": 333
+         }
+    }

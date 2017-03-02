@@ -38,10 +38,15 @@ HTTP GET message to determine the availability of a specific room during a given
 http://localhost:8080/bookingDetails/availableRooms/{from_date}/{to_date}
 
 ---
-HTTP POST message to create a new booking. *HTTP 'POST' call to `/bookingDetails/createBooking` will *add*, or *append*, the enclosed body to the collection (database, filesystem, etc) designated by the booking system.
+HTTP POST message to create a new booking. *HTTP 'POST' call to `/bookingDetails/createBooking` will *add*, or *append*, the enclosed body to the collection (database, filesystem, etc) designated by the booking system. The Sample Json Request Body
 --
 http://localhost:8080/bookingDetails/createBooking
+
++
+[source,json]
 ----
+include::{book-root}/snippets/sample-json-booking-request-body.txt[]
+-----
 
 [[initial]]
 --- Building a REST service
@@ -166,3 +171,4 @@ include::{book-root}/snippets/simple-json-response.txt[]
 == Conclusion
 Congratulations! You've just developed a hotel management system RESTful web service with Spring boot.
 
+@Todo: All Model entities primary keys should be GeneratedValue
