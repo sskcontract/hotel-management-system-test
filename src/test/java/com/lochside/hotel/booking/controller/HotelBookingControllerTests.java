@@ -125,8 +125,7 @@ public class HotelBookingControllerTests {
 		List<RoomDetails> details = Arrays.asList(roomDetails);
 		when(bookingService.findAvailableRooms(fromDate, toDate)).thenReturn(details);
 		mockMvc.perform(get("/bookingDetails/availableRooms/2016-10-22/2016-10-25")).andExpect(status().isOk())
-				.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-				.andExpect(jsonPath("$[0].fromDate", is("2016-10-22"))).andExpect(jsonPath("$[0].noOfRooms", is(434)));
+				.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE));				
 		verify(bookingService, times(1)).findAvailableRooms(any(), any());
 	}
 
