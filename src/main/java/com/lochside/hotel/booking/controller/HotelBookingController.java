@@ -25,17 +25,17 @@ public class HotelBookingController {
 	@Autowired
 	private HotelBookingService bookingService;
 
-	@RequestMapping(method = RequestMethod.GET, value = "/bookingDetails/customer/{customerId}")
+	@RequestMapping( value = "/bookingDetails/customer/{customerId}")
 	public Collection<Booking> getBookingsByCustomer(@PathVariable Long customerId) {
 		return bookingService.findBookingByCustomerId(customerId);
 	}
 
-	@RequestMapping(method = RequestMethod.GET, value = "/bookingDetails/room/{roomId}")
+	@RequestMapping(value = "/bookingDetails/room/{roomId}")
 	public Collection<Booking> getBookingsByRoom(@PathVariable Long roomId) {
 		return bookingService.findBookingByRoomId(roomId);
 	}
 
-	@RequestMapping(method = RequestMethod.GET, value = "/bookingDetails/availableRooms/{from_date}/{to_date}")
+	@RequestMapping(value = "/bookingDetails/availableRooms/{from_date}/{to_date}")
 	public List<RoomDetails> getAvailableRooms(@PathVariable String from_date, @PathVariable String to_date) {
 		DateFormat formatter = new SimpleDateFormat("yyyy-mm-dd");
 		try {

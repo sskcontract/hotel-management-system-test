@@ -33,7 +33,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import com.lochside.hotel.booking.LochSideHotelBookingSystemApplication;
+import com.lochside.hotel.booking.HotelBookingSystemApplication;
 import com.lochside.hotel.booking.RoomDetails;
 import com.lochside.hotel.booking.model.Booking;
 import com.lochside.hotel.booking.model.Customer;
@@ -44,7 +44,7 @@ import com.lochside.hotel.booking.repository.RoomRepository;
 import com.lochside.hotel.booking.service.HotelBookingService;
 
 @RunWith(MockitoJUnitRunner.class)
-@SpringBootTest(classes = LochSideHotelBookingSystemApplication.class)
+@SpringBootTest(classes = HotelBookingSystemApplication.class)
 @WebAppConfiguration
 public class HotelBookingControllerTests {
 

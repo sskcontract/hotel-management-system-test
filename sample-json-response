@@ -1,0 +1,22 @@
+[
+    {
+        "bookingId": 200,
+        "roomId": 222,
+        "customerId": 311,
+        "fromDate": "21-11-2016",
+        "toDate": "24-11-2016",
+        "customer":
+        {
+            "customerId": 311,
+            "firstName": "John2",
+            "lastName": "Kite",
+            "emailId": "Jhon2.Kite@gmail.com"
+        },
+        "room":
+        {
+            "roomId": 222,
+            "roomType": "Single",
+            "price": 50
+        }
+    }
+]
